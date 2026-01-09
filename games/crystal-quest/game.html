@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Crystal Quest | 3D Adventure Game</title>
+    <meta name="description"
+        content="An exciting 3D adventure game - collect magical crystals on a mystical floating island!">
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="crystal-loader">
+                <div class="crystal"></div>
+                <div class="crystal"></div>
+                <div class="crystal"></div>
+            </div>
+            <h1 class="game-title">CRYSTAL QUEST</h1>
+            <p class="loading-text">Loading Adventure...</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <!-- HUD Overlay -->
+    <div id="hud">
+        <div class="hud-left">
+            <div class="score-container">
+                <span class="score-icon">💎</span>
+                <span id="score">0</span>
+                <span class="score-total">/ 10</span>
+            </div>
+        </div>
+        <div class="hud-center">
+            <h2 class="level-title">Crystal Quest</h2>
+        </div>
+        <div class="hud-right">
+            <button id="restart-btn" class="hud-btn">↻ Restart</button>
+        </div>
+    </div>
+
+    <!-- Controls Info -->
+    <div id="controls-info">
+        <div class="control-key">W A S D</div>
+        <span>or Arrow Keys to Move</span>
+    </div>
+
+    <!-- Game Messages -->
+    <div id="game-message" class="hidden">
+        <div class="message-content">
+            <h2 id="message-title">Victory!</h2>
+            <p id="message-text">You collected all the crystals!</p>
+            <button id="play-again-btn" class="action-btn">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <div class="start-content">
+            <div class="logo-crystal"></div>
+            <h1>CRYSTAL QUEST</h1>
+            <p class="tagline">Explore the mystical floating island and collect all magical crystals</p>
+            <button id="start-btn" class="action-btn pulse">START ADVENTURE</button>
+            <div class="controls-preview">
+                <div class="key-group">
+                    <div class="key">W</div>
+                    <div class="key-row">
+                        <div class="key">A</div>
+                        <div class="key">S</div>
+                        <div class="key">D</div>
+                    </div>
+                </div>
+                <span>Movement Controls</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js and Game Scripts -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="js/game.js"></script>
+</body>
+
+</html>

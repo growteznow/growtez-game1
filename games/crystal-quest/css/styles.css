@@ -1,0 +1,773 @@
+/* ============================================
+   Crystal Quest - 3D Adventure Game Styles
+   ============================================ */
+
+:root {
+    --primary-color: #00f5ff;
+    --secondary-color: #ff00ff;
+    --accent-color: #ffcc00;
+    --bg-dark: #0a0a1a;
+    --bg-gradient: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a2e 100%);
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0cc;
+    --glow-cyan: 0 0 20px rgba(0, 245, 255, 0.5);
+    --glow-magenta: 0 0 20px rgba(255, 0, 255, 0.5);
+    --glass-bg: rgba(10, 10, 40, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ============================================
+   Loading Screen
+   ============================================ */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.crystal-loader {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.crystal-loader .crystal {
+    width: 20px;
+    height: 35px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: crystalPulse 1.5s ease-in-out infinite;
+    box-shadow: var(--glow-cyan);
+}
+
+.crystal-loader .crystal:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.crystal-loader .crystal:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes crystalPulse {
+
+    0%,
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2) translateY(-10px);
+        opacity: 1;
+    }
+}
+
+.game-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+    margin-bottom: 20px;
+}
+
+.loading-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+    animation: progressAnim 2s ease-in-out forwards;
+}
+
+@keyframes progressAnim {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 70%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   Game Container & Canvas
+   ============================================ */
+#game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+   HUD (Heads-Up Display)
+   ============================================ */
+#hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#hud.visible {
+    opacity: 1;
+}
+
+#hud>* {
+    pointer-events: auto;
+}
+
+.hud-left,
+.hud-right {
+    flex: 1;
+}
+
+.hud-right {
+    text-align: right;
+}
+
+.hud-center {
+    flex: 2;
+    text-align: center;
+}
+
+.score-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glow-cyan);
+}
+
+.score-icon {
+    font-size: 1.5rem;
+    animation: iconBounce 2s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+#score {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: var(--glow-cyan);
+}
+
+.score-total {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.level-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.hud-btn {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hud-btn:hover {
+    background: rgba(0, 245, 255, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: var(--glow-cyan);
+    transform: scale(1.05);
+}
+
+/* ============================================
+   Controls Info
+   ============================================ */
+#controls-info {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#controls-info.visible {
+    opacity: 1;
+}
+
+.control-key {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 3px;
+}
+
+#controls-info span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Game Messages (Win/Lose)
+   ============================================ */
+#game-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 26, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#game-message.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.message-content {
+    text-align: center;
+    animation: messagePopIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes messagePopIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#message-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-shadow: 0 0 40px rgba(0, 245, 255, 0.5);
+}
+
+#message-text {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: var(--bg-dark);
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 245, 255, 0.3);
+}
+
+.action-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 50px rgba(0, 245, 255, 0.5);
+}
+
+.action-btn.pulse {
+    animation: btnPulse 2s ease-in-out infinite;
+}
+
+@keyframes btnPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 40px rgba(0, 245, 255, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 10px 60px rgba(0, 245, 255, 0.6);
+    }
+}
+
+/* ============================================
+   Start Screen
+   ============================================ */
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 800;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#start-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.start-content {
+    text-align: center;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-crystal {
+    width: 80px;
+    height: 120px;
+    margin: 0 auto 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: logoFloat 3s ease-in-out infinite;
+    box-shadow: 0 20px 60px rgba(0, 245, 255, 0.4);
+}
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.start-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.controls-preview {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.key-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.key-row {
+    display: flex;
+    gap: 8px;
+}
+
+.key {
+    width: 45px;
+    height: 45px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.controls-preview span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+
+    .game-title,
+    .start-content h1 {
+        font-size: 2.2rem;
+    }
+
+    #message-title {
+        font-size: 2.5rem;
+    }
+
+    #hud {
+        padding: 15px 20px;
+    }
+
+    .score-container {
+        padding: 10px 18px;
+    }
+
+    #score {
+        font-size: 1.4rem;
+    }
+
+    .level-title {
+        display: none;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .action-btn {
+        padding: 15px 40px;
+        font-size: 1rem;
+    }
+
+    #controls-info {
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .game-title,
+    .start-content h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    .logo-crystal {
+        width: 60px;
+        height: 90px;
+    }
+
+    .key {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   Virtual Joystick (Mobile)
+   ============================================ */
+#joystick-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 200;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#joystick-container.visible {
+    opacity: 0.7;
+    pointer-events: auto;
+}
+
+.joystick-base {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 245, 255, 0.15);
+    border: 2px solid rgba(0, 245, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+}
+
+.joystick-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+    transition: transform 0.05s ease-out;
+}
+
+/* Mobile-specific UI adjustments */
+@media (max-width: 768px) {
+    .controls-preview {
+        display: none;
+    }
+
+    #hud {
+        padding: 10px 15px;
+    }
+
+    .hud-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    .score-container {
+        padding: 8px 16px;
+    }
+
+    .score-icon {
+        font-size: 1.2rem;
+    }
+
+    #score {
+        font-size: 1.2rem;
+    }
+
+    .score-total {
+        font-size: 0.85rem;
+    }
+
+    #game-message .message-content {
+        padding: 20px;
+    }
+
+    #message-title {
+        font-size: 2rem;
+    }
+
+    #message-text {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .action-btn {
+        padding: 14px 35px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Touch feedback */
+@media (hover: none) and (pointer: coarse) {
+    .action-btn:active {
+        transform: scale(0.95);
+    }
+
+    .hud-btn:active {
+        transform: scale(0.95);
+        background: rgba(0, 245, 255, 0.3);
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+    .start-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .logo-crystal {
+        width: 40px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    .controls-preview {
+        display: none;
+    }
+
+    .action-btn {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+
+    .joystick-base {
+        bottom: 30px;
+        left: 40px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .joystick-handle {
+        width: 40px;
+        height: 40px;
+    }
+
+    #hud {
+        padding: 8px 15px;
+    }
+}
+
+/* Prevent text selection during gameplay */
+#game-container,
+#joystick-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* Fix for iOS Safari viewport */
+@supports (-webkit-touch-callout: none) {
+    body {
+        height: -webkit-fill-available;
+    }
+
+    #game-container,
+    #start-screen,
+    #loading-screen {
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+}
