@@ -14,16 +14,61 @@
     <meta name="author" content="growtez">
     <meta name="theme-color" content="#0F8A8A">
 
-    <!-- Open Graph -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://games.growtez.com/">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://games.growtez.com/">
     <meta property="og:title" content="Growtez Games | Play Free 3D Browser Games">
-    <meta property="og:description" content="Play free 3D browser games built with modern web technologies.">
+    <meta property="og:description"
+        content="Play free 3D browser games built with modern web technologies. Experience Crystal Quest and more exciting adventures without any downloads!">
+    <meta property="og:image" content="https://growtez.com/assets/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Growtez Games">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://games.growtez.com/">
+    <meta property="twitter:title" content="Growtez Games | Play Free 3D Browser Games">
+    <meta property="twitter:description"
+        content="Play free 3D browser games built with modern web technologies. No downloads required.">
+    <meta property="twitter:image" content="https://growtez.com/assets/logo.png">
+    <meta name="twitter:creator" content="@growtez">
+    <meta name="twitter:site" content="@growtez">
 
     <!-- Mobile Web App -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Growtez Games">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Growtez Games",
+      "url": "https://games.growtez.com/",
+      "description": "Play free 3D browser games built with modern web technologies.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://games.growtez.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Growtez",
+        "url": "https://growtez.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://growtez.com/assets/logo.png"
+        }
+      }
+    }
+    </script>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -62,9 +107,11 @@
         <div class="container">
             <div class="hero-content">
                 <span class="hero-label">🎮 FREE BROWSER GAMES</span>
-                <h1>Play <span class="highlight">Amazing</span> Games<br>Right in Your Browser</h1>
-                <p>Experience stunning 3D games built with cutting-edge web technologies. No downloads, no installs –
-                    just pure fun!</p>
+                <header>
+                    <h1>Play <span class="highlight">Amazing</span> Games<br>Right in Your Browser</h1>
+                    <p>Experience stunning 3D games built with cutting-edge web technologies. No downloads, no installs
+                        – just pure fun!</p>
+                </header>
                 <a href="#games" class="btn-primary">
                     <i class="fas fa-gamepad"></i>
                     Browse Games
