@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Primary Meta Tags -->
-    <title>Growtez Games | Play Free 3D Browser Games</title>
+    <title>Growtez Games | Game Development Agency - We Build Games That Players Love</title>
     <meta name="description"
-        content="Play free 3D browser games built with modern web technologies. Experience Crystal Quest and more exciting adventures!">
+        content="Professional game development agency specializing in browser games, mobile games, and immersive gaming experiences. Partner with us to bring your game vision to life.">
     <meta name="keywords"
-        content="free games, browser games, 3D games, web games, crystal quest, growtez games, online games">
+        content="game development agency, game studio, indie game publisher, browser games, mobile games, 3D games, game design, growtez games">
     <meta name="author" content="growtez">
-    <meta name="theme-color" content="#0F8A8A">
+    <meta name="theme-color" content="#0a0f1a">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://games.growtez.com/">
@@ -20,9 +20,9 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://games.growtez.com/">
-    <meta property="og:title" content="Growtez Games | Play Free 3D Browser Games">
+    <meta property="og:title" content="Growtez Games | Game Development Agency">
     <meta property="og:description"
-        content="Play free 3D browser games built with modern web technologies. Experience Crystal Quest and more exciting adventures without any downloads!">
+        content="Professional game development agency. We design, develop, and publish games that players love. Partner with us for your next gaming project.">
     <meta property="og:image" content="https://growtez.com/assets/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -32,9 +32,9 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://games.growtez.com/">
-    <meta property="twitter:title" content="Growtez Games | Play Free 3D Browser Games">
+    <meta property="twitter:title" content="Growtez Games | Game Development Agency">
     <meta property="twitter:description"
-        content="Play free 3D browser games built with modern web technologies. No downloads required.">
+        content="Professional game development agency. We design, develop, and publish games that players love.">
     <meta property="twitter:image" content="https://growtez.com/assets/logo.png">
     <meta name="twitter:creator" content="@growtez">
     <meta name="twitter:site" content="@growtez">
@@ -49,23 +49,22 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
+      "@type": "Organization",
       "name": "Growtez Games",
       "url": "https://games.growtez.com/",
-      "description": "Play free 3D browser games built with modern web technologies.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://games.growtez.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
+      "description": "Professional game development agency specializing in browser games, mobile games, and immersive gaming experiences.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://growtez.com/assets/logo.png"
       },
-      "publisher": {
+      "sameAs": [
+        "https://www.instagram.com/growteznow/",
+        "https://www.linkedin.com/company/100117056/"
+      ],
+      "parentOrganization": {
         "@type": "Organization",
         "name": "Growtez",
-        "url": "https://growtez.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://growtez.com/assets/logo.png"
-        }
+        "url": "https://growtez.com/"
       }
     }
     </script>
@@ -90,9 +89,12 @@
                 </a>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="/" class="nav-link active">Games</a></li>
-                <li><a href="https://growtez.com" class="nav-link" target="_blank">Main Site</a></li>
-                <li><a href="https://growtez.com/contact" class="nav-link" target="_blank">Contact</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
+                <li><a href="#publish" class="nav-link">Publish With Us</a></li>
+                <li><a href="https://growtez.com/contact" class="nav-link nav-cta" target="_blank">Start a Project</a>
+                </li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -106,98 +108,173 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-label">🎮 FREE BROWSER GAMES</span>
-                <header>
-                    <h1>Play <span class="highlight">Amazing</span> Games<br>Right in Your Browser</h1>
-                    <p>Experience stunning 3D games built with cutting-edge web technologies. No downloads, no installs
-                        – just pure fun!</p>
-                </header>
-                <a href="#games" class="btn-primary">
-                    <i class="fas fa-gamepad"></i>
-                    Browse Games
-                </a>
+                <span class="hero-label">🎮 GAME DEVELOPMENT AGENCY</span>
+                <h1>We Build <span class="highlight">Games</span><br>That Players Love</h1>
+                <p>From concept to launch, we create immersive gaming experiences that captivate players worldwide.
+                    Let's bring your vision to life.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn-primary">
+                        <i class="fas fa-gamepad"></i>
+                        View Our Work
+                    </a>
+                    <a href="https://growtez.com/contact" class="btn-secondary" target="_blank">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Project
+                    </a>
+                </div>
             </div>
         </div>
         <div class="hero-bg">
+            <div class="grid-overlay"></div>
             <div class="floating-shape shape-1"></div>
             <div class="floating-shape shape-2"></div>
             <div class="floating-shape shape-3"></div>
         </div>
     </section>
 
-    <!-- Games Section -->
-    <section class="games-section" id="games">
+    <!-- Services Section -->
+    <section class="section services-section" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">OUR GAMES</span>
-                <h2>Choose Your Adventure</h2>
+                <span class="section-label">WHAT WE DO</span>
+                <h2>Game Development Services</h2>
+                <p>End-to-end game development solutions tailored to bring your ideas to reality</p>
                 <div class="header-underline"></div>
             </div>
 
-            <div class="games-grid">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Game Design</h3>
+                    <p>Creative concept development, gameplay mechanics, level design, and player experience
+                        optimization.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Full-Stack Development</h3>
+                    <p>Expert development using Unity, Unreal, Three.js, and custom engines for any platform.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Art & Animation</h3>
+                    <p>Stunning 2D/3D art, character design, environment creation, and fluid animations.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>QA & Testing</h3>
+                    <p>Comprehensive testing, bug tracking, performance optimization, and quality assurance.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Post-Launch Support</h3>
+                    <p>Ongoing maintenance, updates, community management, and live operations support.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Cross-Platform</h3>
+                    <p>Seamless deployment across web, mobile, PC, and console platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">OUR WORK</span>
+                <h2>Featured Projects</h2>
+                <p>Games we've crafted with passion and precision</p>
+                <div class="header-underline"></div>
+            </div>
+
+            <div class="portfolio-grid">
                 <!-- Crystal Quest Card -->
-                <a href="games/crystal-quest/game.html" class="game-card">
-                    <div class="game-thumbnail">
-                        <div class="game-preview crystal-quest-preview">
+                <a href="games/crystal-quest/game.html" class="portfolio-card">
+                    <div class="portfolio-thumbnail">
+                        <div class="portfolio-preview crystal-quest-preview">
                             <div class="preview-crystal"></div>
                             <div class="preview-crystal"></div>
                             <div class="preview-crystal"></div>
                             <div class="preview-glow"></div>
                         </div>
-                        <div class="game-badge">NEW</div>
+                        <div class="portfolio-badge">LIVE</div>
                     </div>
-                    <div class="game-info">
+                    <div class="portfolio-info">
                         <h3>Crystal Quest</h3>
-                        <p>Navigate through a mystical floating island and collect magical crystals while avoiding
-                            obstacles!</p>
-                        <div class="game-meta">
-                            <span class="game-tag"><i class="fas fa-cube"></i> 3D</span>
-                            <span class="game-tag"><i class="fas fa-mobile-alt"></i> Mobile Ready</span>
+                        <p>Navigate through mystical floating islands collecting magical crystals in this stunning 3D
+                            adventure.</p>
+                        <div class="portfolio-meta">
+                            <span class="portfolio-tag"><i class="fas fa-cube"></i> 3D WebGL</span>
+                            <span class="portfolio-tag"><i class="fas fa-globe"></i> Browser</span>
                         </div>
-                        <div class="play-btn">
+                        <div class="view-btn">
                             <i class="fas fa-play"></i>
                             <span>Play Now</span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Coming Soon Cards -->
-                <div class="game-card coming-soon">
-                    <div class="game-thumbnail">
-                        <div class="game-preview coming-soon-preview">
-                            <i class="fas fa-rocket"></i>
+                <!-- Himalayan Rescue Card -->
+                <a href="games/himalayan-rescue/game.html" class="portfolio-card">
+                    <div class="portfolio-thumbnail">
+                        <div class="portfolio-preview himalayan-rescue-preview">
+                            <div class="preview-mountain"></div>
+                            <div class="preview-mountain peak-2"></div>
+                            <div class="preview-snow"></div>
+                            <div class="preview-snow"></div>
                         </div>
-                        <div class="game-badge soon">SOON</div>
+                        <div class="portfolio-badge">LIVE</div>
                     </div>
-                    <div class="game-info">
-                        <h3>Space Runner</h3>
-                        <p>Endless space adventure with dodge mechanics and power-ups. Coming soon!</p>
-                        <div class="game-meta">
-                            <span class="game-tag"><i class="fas fa-cube"></i> 3D</span>
-                            <span class="game-tag"><i class="fas fa-infinity"></i> Endless</span>
+                    <div class="portfolio-info">
+                        <h3>Himalayan Rescue</h3>
+                        <p>Trek through snowy mountains to rescue your lost friend before the blizzard hits in this
+                            survival adventure.</p>
+                        <div class="portfolio-meta">
+                            <span class="portfolio-tag"><i class="fas fa-mountain"></i> Adventure</span>
+                            <span class="portfolio-tag"><i class="fas fa-heart"></i> Survival</span>
                         </div>
-                        <div class="play-btn disabled">
-                            <i class="fas fa-clock"></i>
-                            <span>Coming Soon</span>
+                        <div class="view-btn">
+                            <i class="fas fa-play"></i>
+                            <span>Play Now</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="game-card coming-soon">
-                    <div class="game-thumbnail">
-                        <div class="game-preview coming-soon-preview">
+                <!-- Coming Soon Card -->
+                <div class="portfolio-card">
+                    <div class="portfolio-thumbnail">
+                        <div class="portfolio-preview coming-soon-preview">
                             <i class="fas fa-puzzle-piece"></i>
                         </div>
-                        <div class="game-badge soon">SOON</div>
+                        <div class="portfolio-badge soon">IN DEV</div>
                     </div>
-                    <div class="game-info">
+                    <div class="portfolio-info">
                         <h3>Block Puzzle</h3>
-                        <p>Classic puzzle game with a modern twist. Stack and clear blocks!</p>
-                        <div class="game-meta">
-                            <span class="game-tag"><i class="fas fa-brain"></i> Puzzle</span>
-                            <span class="game-tag"><i class="fas fa-trophy"></i> High Score</span>
+                        <p>Classic puzzle game with a modern twist. Strategic block placement meets beautiful visuals.
+                        </p>
+                        <div class="portfolio-meta">
+                            <span class="portfolio-tag"><i class="fas fa-brain"></i> Puzzle</span>
+                            <span class="portfolio-tag"><i class="fas fa-trophy"></i> Competitive</span>
                         </div>
-                        <div class="play-btn disabled">
+                        <div class="view-btn disabled">
                             <i class="fas fa-clock"></i>
                             <span>Coming Soon</span>
                         </div>
@@ -207,30 +284,207 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
+    <!-- Stats Section -->
+    <section class="stats-section">
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Instant Play</h3>
-                    <p>No downloads required. Games load instantly in your browser.</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Projects Completed</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Friendly</h3>
-                    <p>All games are optimized for touch controls on phones and tablets.</p>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-code"></i>
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Players Reached</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indie Publishing Section -->
+    <section class="section indie-section" id="publish">
+        <div class="container">
+            <div class="indie-container">
+                <div class="indie-content">
+                    <span class="section-label">FOR INDIE DEVELOPERS</span>
+                    <h2>Publish Your Game <span class="highlight">With Us</span></h2>
+                    <p>We help indie developers reach global audiences. Partner with us for publishing, marketing, and
+                        distribution support.</p>
+
+                    <ul class="indie-benefits">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Fair Revenue Share</strong> – Keep more of what you earn with our
+                                developer-friendly terms</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Marketing Support</strong> – Get featured on our platform and social
+                                channels</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Multi-Platform Distribution</strong> – We handle web, mobile, and store
+                                deployments</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Technical Assistance</strong> – Our team helps with optimization and bug
+                                fixes</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Analytics & Insights</strong> – Track your game's performance with detailed
+                                metrics</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://growtez.com/contact" class="btn-primary" target="_blank">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Your Game
+                    </a>
+                </div>
+
+                <div class="indie-visual">
+                    <div class="indie-card">
+                        <div class="indie-card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Launch With Confidence</h3>
+                        <p>Join our growing network of indie developers and get the support you need to succeed.</p>
+                        <div class="indie-stats">
+                            <div class="indie-stat">
+                                <span>Upto 70%</span>
+                                <span>Revenue Share</span>
+                            </div>
+                            <div class="indie-stat">
+                                <span>3</span>
+                                <span>Platforms</span>
+                            </div>
+                            <div class="indie-stat">
+                                <span>24/7</span>
+                                <span>Support</span>
+                            </div>
+                            <div class="indie-stat">
+                                <span>0</span>
+                                <span>Upfront Fees</span>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Modern Tech</h3>
-                    <p>Built with Three.js and WebGL for stunning 3D graphics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">HOW WE WORK</span>
+                <h2>Our Development Process</h2>
+                <p>A proven approach that delivers results</p>
+                <div class="header-underline"></div>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We dive deep into your vision, analyze the market, and define the scope of your project.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our team creates concepts, prototypes, and a detailed game design document.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Development</h3>
+                    <p>We build your game with iterative cycles, keeping you involved at every milestone.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Launch</h3>
+                    <p>We handle deployment, marketing support, and ensure a successful game launch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">TESTIMONIALS</span>
+                <h2>What Our Clients Say</h2>
+                <div class="header-underline"></div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The team at Growtez Games exceeded our expectations. They transformed
+                        our rough concept into a polished, engaging game that our players love.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <h4>Suresh K.</h4>
+                            <p>Indie Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Professional, creative, and responsive. Working with them was a breeze.
+                        They understood our vision and delivered beyond what we imagined.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Amit M.</h4>
+                            <p>Startup Founder</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Their publishing support helped us reach 10x more players. The marketing
+                        and distribution assistance was invaluable for our indie studio.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RJ</div>
+                        <div class="author-info">
+                            <h4>Rahul J.</h4>
+                            <p>Game Studio Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Something <span class="highlight">Amazing</span>?</h2>
+                <p>Let's discuss your game idea and explore how we can bring it to life together.</p>
+                <div class="hero-buttons">
+                    <a href="https://growtez.com/contact" class="btn-primary" target="_blank">
+                        <i class="fas fa-comments"></i>
+                        Let's Talk
+                    </a>
+                    <a href="mailto:contact@growtez.com" class="btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        contact@growtez.com
+                    </a>
                 </div>
             </div>
         </div>
@@ -240,20 +494,59 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="https://growtez.com/assets/logo.png" alt="Growtez" class="footer-logo">
-                    <span class="logo-suffix">games</span>
+                <div class="footer-brand-section">
+                    <div class="footer-brand">
+                        <img src="https://growtez.com/assets/logo.png" alt="Growtez" class="footer-logo">
+                        <span class="logo-suffix">games</span>
+                    </div>
+                    <p>Game development agency crafting immersive experiences. From browser games to mobile adventures,
+                        we build games that players love.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/growteznow/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/100117056/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/growtez" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="https://growtez.com" target="_blank">Main Website</a>
-                    <a href="https://growtez.com/contact" target="_blank">Contact</a>
-                    <a href="https://www.instagram.com/growteznow/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/100117056/" target="_blank"><i
-                            class="fab fa-linkedin"></i></a>
+
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Game Design</a></li>
+                        <li><a href="#services">Development</a></li>
+                        <li><a href="#services">Art & Animation</a></li>
+                        <li><a href="#services">QA Testing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://growtez.com" target="_blank">About Us</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="https://growtez.com/contact" target="_blank">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Developers</h4>
+                    <ul class="footer-links">
+                        <li><a href="#publish">Publish With Us</a></li>
+                        <li><a href="#publish">Revenue Share</a></li>
+                        <li><a href="https://growtez.com/contact" target="_blank">Submit a Game</a></li>
+                        <li><a href="https://growtez.com/contact" target="_blank">Partner Program</a></li>
+                    </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 growtez. All rights reserved.</p>
+                <p>&copy; 2026 Growtez Games. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="https://growtez.com/privacy" target="_blank">Privacy Policy</a>
+                    <a href="https://growtez.com/terms" target="_blank">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -268,13 +561,57 @@
             navMenu.classList.toggle('active');
         });
 
-        // Smooth scroll
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(10, 15, 26, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 15, 26, 0.9)';
+            }
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
                 }
             });
         });
